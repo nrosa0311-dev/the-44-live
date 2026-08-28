@@ -532,18 +532,82 @@ function renderEventSections(){
   try{ observeReveals(); }catch(e){}
 }
 renderEventSections();
-// live data: events.json is refreshed daily from Posh by a GitHub Action.
+// live data, in freshness order:
+//   1. Posh's public API, fetched straight from the visitor's browser. Posh's bot
+//      protection returns 403 to datacenter IPs, so the daily GitHub Action stalls
+//      out (it did, silently, for a month); real browsers are not blocked, which
+//      makes this the path that actually stays current.
+//   2. events.json — last good snapshot committed to the repo.
+//   3. the EVENTS list baked in above.
 // Mutate EVENTS in place — fx-tonight.js holds a reference to this same array
 // and re-renders every minute, so it picks up the fresh list on its own.
 (function(){
   if(typeof fetch!=='function') return;
-  fetch('events.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).then(j=>{
-    if(!j || !Array.isArray(j.events) || !j.events.length) return;
-    const fresh=j.events.filter(e=>e && e.date && e.title);
-    if(!fresh.length) return;
-    EVENTS.length=0; fresh.forEach(e=>EVENTS.push(e));
+  var POSH='https://posh.vip/api/web/v2/util/group_url/the44';
+
+  function to12h(hhmm){
+    var p=hhmm.split(':'), h=Number(p[0]), m=Number(p[1]);
+    return ((h+11)%12+1)+':'+String(m).padStart(2,'0')+' '+(h>=12?'PM':'AM');
+  }
+
+  // Posh's `start` is the venue-local wall clock with a fake Z suffix. Slice it,
+  // never Date-parse it, or every show shifts by the UTC offset.
+  function fromPosh(data){
+    if(!data || !Array.isArray(data.events)) return null;
+    var seen={};
+    var out=data.events
+      .filter(function(e){ return e && e.status==='live' && e.url && e.name && typeof e.start==='string'; })
+      .map(function(e){
+        return {
+          sort:e.start,
+          date:e.start.slice(0,10),
+          time:to12h(e.start.slice(11,16)),
+          // titles are injected via innerHTML, so strip anything tag-shaped
+          title:String(e.name).replace(/[<>]/g,'').replace(/\s+/g,' ').trim(),
+          url:'https://posh.vip/e/'+encodeURIComponent(e.url)
+        };
+      })
+      .filter(function(e){ if(seen[e.url]) return false; seen[e.url]=1; return true; })
+      .sort(function(a,b){ return a.sort.localeCompare(b.sort); })
+      .map(function(e){ delete e.sort; return e; });
+    // a bad day at Posh must never wipe the calendar
+    return out.length>=3 ? out : null;
+  }
+
+  function apply(list){
+    if(!list || !list.length) return false;
+    EVENTS.length=0;
+    list.forEach(function(e){ EVENTS.push(e); });
     renderEventSections();
-  }).catch(()=>{});
+    return true;
+  }
+
+  function withTimeout(p,ms){
+    return new Promise(function(resolve){
+      var done=false;
+      var finish=function(v){ if(!done){ done=true; resolve(v); } };
+      setTimeout(function(){ finish(null); }, ms);
+      p.then(finish, function(){ finish(null); });
+    });
+  }
+
+  function loadSnapshot(){
+    return fetch('events.json',{cache:'no-cache'})
+      .then(function(r){ return r.ok?r.json():null; })
+      .then(function(j){
+        if(!j || !Array.isArray(j.events)) return;
+        apply(j.events.filter(function(e){ return e && e.date && e.title; }));
+      })
+      .catch(function(){});
+  }
+
+  withTimeout(
+    fetch(POSH,{headers:{Accept:'application/json'}}).then(function(r){ return r.ok?r.json():null; }),
+    6000
+  ).then(function(data){
+    if(apply(fromPosh(data))) return;
+    return loadSnapshot();
+  });
 })();
 
 /* ---------- FOOD card-deck portal (spread on scroll) ---------- */
