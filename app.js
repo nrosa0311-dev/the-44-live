@@ -360,7 +360,7 @@ function fillMarquee(id, items){
   const set=items.map(x=>`<span>${x}</span>`).join('');
   t.innerHTML=set+set;
 }
-const MQ=["Live Music 7 Nights","Cold Beer","Rockin' Food","Late Night Eats","Penny Beers Daily","Glendale AZ","Book Your Event","Open Til 2AM"];
+const MQ=["Where Arizona Comes Alive","Cold Beer","Rockin' Food","Late Night Eats","Penny Beers Daily","Glendale AZ","Book Your Event","Open Til 2AM"];
 fillMarquee('mq1',MQ); fillMarquee('mq2',MQ);
 
 // equalizer visualizer bars (red gradient, moving up and down)
