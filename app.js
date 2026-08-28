@@ -574,11 +574,46 @@ renderEventSections();
     return out.length>=3 ? out : null;
   }
 
+  function isoStart(date,time){
+    var m=/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i.exec((time||'').trim());
+    var h=20, mi=0;
+    if(m){ h=Number(m[1])%12; if(/PM/i.test(m[3])) h+=12; mi=Number(m[2]); }
+    // Arizona does not observe DST, so -07:00 is correct year round.
+    return date+'T'+String(h).padStart(2,'0')+':'+String(mi).padStart(2,'0')+':00-07:00';
+  }
+
+  // Google's event listings read this block. Rebuilt from whichever event list
+  // won above, so the markup can never drift from what the page displays.
+  function writeEventSchema(){
+    var el=document.getElementById('events-schema'); if(!el) return;
+    var cutoff=new Date(); cutoff.setHours(0,0,0,0);
+    var venue={"@type":"MusicVenue","name":"The 44 Live Music Bar","address":{"@type":"PostalAddress","streetAddress":"4494 W Peoria Ave","addressLocality":"Glendale","addressRegion":"AZ","postalCode":"85302","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":33.5831282,"longitude":-112.1552594},"url":"https://the44.live/"};
+    var items=EVENTS.filter(function(e){ return e && e.date && new Date(e.date+'T23:59:59')>=cutoff; })
+      .slice(0,60)
+      .map(function(e){
+        return {
+          "@context":"https://schema.org",
+          "@type":"MusicEvent",
+          "name":e.title,
+          "startDate":isoStart(e.date,e.time),
+          "eventStatus":"https://schema.org/EventScheduled",
+          "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
+          "url":e.url||CONFIG.posh,
+          "image":["https://the44.live/assets/banner-poster.jpg"],
+          "location":venue,
+          "organizer":{"@type":"Organization","name":"The 44 Live Music Bar","url":"https://the44.live/"},
+          "offers":{"@type":"Offer","url":e.url||CONFIG.posh,"availability":"https://schema.org/InStock"}
+        };
+      });
+    if(items.length) el.textContent=JSON.stringify(items);
+  }
+
   function apply(list){
     if(!list || !list.length) return false;
     EVENTS.length=0;
     list.forEach(function(e){ EVENTS.push(e); });
     renderEventSections();
+    writeEventSchema();
     return true;
   }
 
