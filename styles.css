@@ -796,11 +796,14 @@ footer.site{background:#000;border-top:1px solid var(--line);padding:60px 28px 3
 .night-flyer{margin:0}
 .night-flyer img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:0 26px 60px -30px rgba(0,0,0,.95)}
 .night-body{min-width:0}
+/* flyer missing or not uploaded yet: give the details the full width */
+.night-layout.no-flyer{grid-template-columns:1fr}
+.night-layout.no-flyer .games-grid{grid-template-columns:repeat(3,1fr)}
 .night-body .games-grid{grid-template-columns:repeat(2,1fr)}
 .night-body .hero-chips{margin-bottom:22px}
 @media(max-width:980px){
-  .night-layout{grid-template-columns:1fr;gap:26px}
+  .night-layout{grid-template-columns:1fr}
   .night-flyer{max-width:340px;margin:0 auto}
-  .night-body .games-grid{grid-template-columns:repeat(2,1fr)}
+  .night-body .games-grid,.night-layout.no-flyer .games-grid{grid-template-columns:repeat(2,1fr)}
 }
-@media(max-width:760px){.night-body .games-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.night-body .games-grid,.night-layout.no-flyer .games-grid{grid-template-columns:1fr}}
