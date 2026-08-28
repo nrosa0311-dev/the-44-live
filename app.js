@@ -240,7 +240,7 @@ function buildFooter(){
     <div class="foot-inner">
       <div class="foot-brand">
         <img src="assets/logo.png" alt="The 44">
-        <p>Phoenix's live music bar. High-impact live experiences and rockin' food in the heart of the West Valley.</p>
+        <p>Glendale's live music bar. High-impact live experiences and rockin' food in the heart of the West Valley.</p>
         <div class="socials" style="margin-top:18px">
           <a href="${CONFIG.ig}" target="_blank" rel="noopener" aria-label="Instagram">${IC.ig}</a>
           <a href="${CONFIG.tt}" target="_blank" rel="noopener" aria-label="TikTok">${IC.tt}</a>
