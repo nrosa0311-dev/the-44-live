@@ -703,6 +703,24 @@ footer.site{background:#000;border-top:1px solid var(--line);padding:60px 28px 3
   color:#fff;text-shadow:0 0 8px rgba(226,27,44,.6);font-size:.86rem}
 #tonight .t-copy b{color:var(--crimson-bright)}
 #tonight:empty{display:none}
+
+/* ---------- upcoming show flyer carousel ---------- */
+.flyer-carousel{position:relative;margin-top:16px}
+.flyer-rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 18px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.flyer-rail::-webkit-scrollbar{height:8px}
+.flyer-rail::-webkit-scrollbar-thumb{background:rgba(255,255,255,.18);border-radius:4px}
+.flyer-card{flex:0 0 auto;width:236px;scroll-snap-align:start;text-decoration:none;color:#fff;border-radius:14px;overflow:hidden;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);transition:transform .2s,border-color .2s}
+.flyer-card:hover{transform:translateY(-4px);border-color:rgba(226,27,44,.55)}
+.flyer-img{display:block;aspect-ratio:1/1;background:#111}
+.flyer-img img{width:100%;height:100%;object-fit:cover;display:block}
+.flyer-meta{display:block;padding:12px 14px}
+.flyer-meta b{display:block;font-family:'Oswald',sans-serif;font-weight:600;font-size:.98rem;line-height:1.2;margin-bottom:5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.flyer-meta span{color:rgba(255,255,255,.6);font-size:.82rem}
+.flyer-nav{position:absolute;top:38%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(13,8,9,.82);color:#fff;font-size:1.7rem;line-height:1;cursor:pointer;z-index:3;display:flex;align-items:center;justify-content:center;padding:0}
+.flyer-nav:hover{background:var(--crimson-bright,#E21B2C);border-color:transparent}
+.flyer-nav.prev{left:-6px}
+.flyer-nav.next{right:-6px}
+@media(max-width:680px){.flyer-card{width:180px}.flyer-nav{display:none}}
 @supports not ((backdrop-filter:blur(10px)) or (-webkit-backdrop-filter:blur(10px))){
   #tonight{background:rgba(20,12,13,.85)}
 }

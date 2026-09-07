@@ -526,9 +526,35 @@ function renderEventSections(){
   }
   const teaser=document.getElementById('events-teaser');
   if(teaser) teaser.innerHTML=upcoming.slice(0,4).map(eventRow).join('');
+  renderFlyers();
   // on the initial call the reveal observer doesn't exist yet (nodes get observed
   // by the global observeReveals() at the end of this file); on async re-renders it does
   try{ observeReveals(); }catch(e){}
+}
+// Upcoming-show flyer carousel on the home page. Reads the same EVENTS array,
+// so it refreshes whenever fresh Posh data lands. Skips shows with no flyer.
+function renderFlyers(){
+  var rail=document.getElementById('flyerRail'); if(!rail) return;
+  var caro=rail.closest('.flyer-carousel');
+  var today=new Date(); today.setHours(0,0,0,0);
+  var ups=EVENTS.filter(function(e){ return e && e.date && e.flyer && new Date(e.date+'T23:59:59')>=today; });
+  if(!ups.length){ if(caro) caro.style.display='none'; return; }
+  if(caro) caro.style.display='';
+  rail.innerHTML=ups.map(function(ev){
+    var f=fmtDate(ev.date), s=splitTitle(ev.title);
+    var alt=String(ev.title||'').replace(/"/g,'&quot;');
+    return '<a class="flyer-card" href="'+(ev.url||CONFIG.posh)+'" target="_blank" rel="noopener">'
+      +'<span class="flyer-img"><img loading="lazy" src="'+ev.flyer+'" alt="'+alt+' flyer"></span>'
+      +'<span class="flyer-meta"><b>'+s.head+'</b><span>'+f.dow+' '+f.mon+' '+f.dnum+' &middot; Doors '+ev.time+'</span></span>'
+    +'</a>';
+  }).join('');
+  if(caro && !caro.dataset.wired){
+    caro.dataset.wired='1';
+    var prev=caro.querySelector('.flyer-nav.prev'), next=caro.querySelector('.flyer-nav.next');
+    var step=function(dir){ rail.scrollBy({left:dir*Math.min(rail.clientWidth*0.9,600),behavior:'smooth'}); };
+    if(prev) prev.addEventListener('click',function(){ step(-1); });
+    if(next) next.addEventListener('click',function(){ step(1); });
+  }
 }
 renderEventSections();
 // live data, in freshness order:
@@ -555,7 +581,7 @@ renderEventSections();
     if(!data || !Array.isArray(data.events)) return null;
     var seen={};
     var out=data.events
-      .filter(function(e){ return e && e.status==='live' && e.url && e.name && typeof e.start==='string'; })
+      .filter(function(e){ return e && e.status==='live' && e.url && e.name && typeof e.start==='string' && !/penny\s*beers/i.test(e.name); })
       .map(function(e){
         return {
           sort:e.start,
@@ -563,7 +589,8 @@ renderEventSections();
           time:to12h(e.start.slice(11,16)),
           // titles are injected via innerHTML, so strip anything tag-shaped
           title:String(e.name).replace(/[<>]/g,'').replace(/\s+/g,' ').trim(),
-          url:'https://posh.vip/e/'+encodeURIComponent(e.url)
+          url:'https://posh.vip/e/'+encodeURIComponent(e.url),
+          flyer:(typeof e.flyer==='string' && e.flyer.indexOf('https://')===0)?e.flyer:''
         };
       })
       .filter(function(e){ if(seen[e.url]) return false; seen[e.url]=1; return true; })
@@ -598,7 +625,7 @@ renderEventSections();
           "eventStatus":"https://schema.org/EventScheduled",
           "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
           "url":e.url||CONFIG.posh,
-          "image":["https://the44.live/assets/banner-poster.jpg"],
+          "image":[e.flyer||"https://the44.live/assets/banner-poster.jpg"],
           "location":venue,
           "organizer":{"@type":"Organization","name":"The 44 Live Music Bar","url":"https://the44.live/"},
           "offers":{"@type":"Offer","url":e.url||CONFIG.posh,"availability":"https://schema.org/InStock"}

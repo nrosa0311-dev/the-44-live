@@ -29,7 +29,7 @@ function to12h(hhmm) {
 
 const seen = new Set();
 const events = data.events
-  .filter(e => e && e.status === 'live' && e.url && e.name && typeof e.start === 'string')
+  .filter(e => e && e.status === 'live' && e.url && e.name && typeof e.start === 'string' && !/penny\s*beers/i.test(e.name))
   // `start` is the venue-local wall clock with a fake Z suffix. Slice it, never Date-parse it.
   .map(e => ({
     sort: e.start,
@@ -38,6 +38,7 @@ const events = data.events
     // titles are injected via innerHTML on the site, so strip anything tag-shaped
     title: e.name.replace(/[<>]/g, '').replace(/\s+/g, ' ').trim(),
     url: `https://posh.vip/e/${encodeURIComponent(e.url)}`,
+    flyer: (typeof e.flyer === 'string' && e.flyer.startsWith('https://')) ? e.flyer : '',
   }))
   .filter(e => (seen.has(e.url) ? false : seen.add(e.url)))
   .sort((a, b) => a.sort.localeCompare(b.sort))
