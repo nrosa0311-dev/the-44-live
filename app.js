@@ -104,7 +104,7 @@ const EVENT_TYPES = [
    desc:"Birthdays, bachelor & bachelorette bashes, reunions and celebrations. Your crowd, our stage.",
    icon:'<path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z"/>'},
   {key:"talent", title:"Live Music & Artist Booking",
-   desc:"Play our stage. Residencies, touring routes, open-mic slots and band booking. Talent, hit us.",
+   desc:"Play our stage. Booked by talent buyer Benjamin Millo. Local acts seeking support slots: email a full EPK, artist name and music links (YouTube/Spotify).",
    icon:'<path d="M12 3v10.55A4 4 0 1014 17V7h4V3z"/>'},
   {key:"specialty", title:"Specialty Events",
    desc:"Themed nights, fundraisers & nonprofits, viewing parties, weddings, receptions and anything custom.",
