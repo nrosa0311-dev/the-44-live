@@ -92,7 +92,7 @@
       html =
         tag +
         '<span class="tn-line">TONIGHT, ' + esc(bn.weekday) +
-        ': Live music and a full bar, open til 2AM</span>' +
+        ': Full bar and late-night kitchen, open til 2AM</span>' +
         nextBit +
         poshBtn("See Shows");
     }
