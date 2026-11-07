@@ -67,7 +67,6 @@ const EVENTS = [
   {date:"2026-09-26", time:"8:00 PM", title:"Animal Magnetism & AZ/DZ", tag:"Tribute", url:"https://posh.vip/e/azdz"},
   {date:"2026-10-03", time:"8:00 PM", title:"Without Fear", url:"https://posh.vip/e/without-fear"},
   {date:"2026-10-24", time:"8:00 PM", title:"RED WHITE AND NU", tag:"New Date", url:"https://posh.vip/e/elote-korn-tribute-w-be-quiet-and-drive-deftones-tribute"},
-  {date:"2026-11-12", time:"6:00 PM", title:"Killer Dwarfs w/ Lit Up", url:"https://posh.vip/e/killer-dwarfs-wlit-up"},
   {date:"2026-11-20", time:"8:00 PM", title:"Green Jello", url:"https://posh.vip/e/green-jello"},
   {date:"2026-11-24", time:"6:00 PM", title:"A Killer's Confession w/ Dizasterpiece & Dead Things", url:"https://posh.vip/e/a-killers-confession-wdizasterpiece-dead-things"}
 ];
@@ -634,10 +633,10 @@ renderEventSections();
     if(items.length) el.textContent=JSON.stringify(items);
   }
 
-  function apply(list){
+  /* Site corrections 2026-11-07: Posh still returns cancelled listings in its group feed, so hide them before rendering; matched by exact ticket URL only. */ var CANCELLED_TICKET_URLS={"https://posh.vip/e/electric-theorem-krm-usa-5":1,"https://posh.vip/e/electric-theorem-krm-usa-6":1,"https://posh.vip/e/electric-theorem-krm-usa-7":1,"https://posh.vip/e/killer-dwarfs-wlit-up-1":1,"https://posh.vip/e/killer-dwarfs-wlit-up":1,"https://posh.vip/e/drop-diezel-1":1}; function applySiteCorrections(list){return list.filter(function(ev){return !ev||!ev.url||!CANCELLED_TICKET_URLS[ev.url];}).map(function(ev){if(ev.url==="https://posh.vip/e/the-soapgirls")ev.time="7:00 PM";if(ev.url==="https://posh.vip/e/wild-at-heart-a-heart-tribute-w-reckless-summer-and-ghost-of-88")ev.time="7:00 PM";if(ev.url==="https://posh.vip/e/the-atomic-kings-and-clover")ev.url="https://posh.vip/e/atomic-kings-album-release-party";if(ev.url==="https://posh.vip/e/green-jell-the-3-little-pigs-tour-w-the-atom")ev.url="https://posh.vip/e/green-jello";return ev;});} function apply(list){
     if(!list || !list.length) return false;
     EVENTS.length=0;
-    list.forEach(function(e){ EVENTS.push(e); });
+    applySiteCorrections(list).forEach(function(e){ EVENTS.push(e); });
     renderEventSections();
     writeEventSchema();
     return true;
