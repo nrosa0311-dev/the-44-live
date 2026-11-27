@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-07T21:50:32.712Z",
+ "updated": "2026-11-27",
  "source": "https://posh.vip/api/web/v2/util/group_url/the44",
  "events": [
   {
@@ -236,9 +236,9 @@
   {
    "date": "2026-09-12",
    "time": "8:00 PM",
-   "title": "Missing Persons W SPECIAL GUESTS 26 B4 40 MILLS END",
+   "title": "COPPER STATE REVIVAL - 26 B4 40 - MILLS END Dale from Missing Persons had fall and will not be appearing tonight",
    "url": "https://posh.vip/e/missing-persons-w-mills-end-24-b4-40",
-   "flyer": "https://images.posh.vip/originals/6a1f76449ecb95f8edb12ce2"
+   "flyer": "https://images.posh.vip/originals/6aa5840d74de107487dc8361"
   },
   {
    "date": "2026-09-13",
@@ -270,24 +270,52 @@
   },
   {
    "date": "2026-09-26",
+   "time": "1:00 PM",
+   "title": "AZLive Calling all AZ Artists",
+   "url": "https://posh.vip/e/azlive-calling-all-az-artists",
+   "flyer": "https://images.posh.vip/originals/6ab457e300199c5600c3010a"
+  },
+  {
+   "date": "2026-09-26",
    "time": "8:00 PM",
    "title": "Animal Magnetism & The JACK",
    "url": "https://posh.vip/e/azdz",
    "flyer": "https://images.posh.vip/originals/6a9f0987a5ac745b54c55a75"
   },
   {
+   "date": "2026-10-02",
+   "time": "8:00 PM",
+   "title": "Sharae & The Budderfly Effect",
+   "url": "https://posh.vip/e/sharae-the-budderfly-effect",
+   "flyer": "https://images.posh.vip/originals/6ab43c53e1d17f49188d8fd4"
+  },
+  {
    "date": "2026-10-06",
-   "time": "7:00 PM",
+   "time": "6:00 PM",
    "title": "Skinlab & Cemetary Legacy",
    "url": "https://posh.vip/e/skinlab-cemetary-legacy",
    "flyer": "https://images.posh.vip/originals/6a7aa744a6f424bd29b0a2f9"
   },
   {
    "date": "2026-10-07",
-   "time": "7:00 PM",
-   "title": "Sad Sounds Society: EMO Night -Opening Night feat. DJ Aaron Bliss",
-   "url": "https://posh.vip/e/sad-sounds-society-emo-night-opening-night-feat-dj-aaron-bliss",
-   "flyer": "https://images.posh.vip/originals/6a9f30f559fa3305ada956a8"
+   "time": "9:30 PM",
+   "title": "ELECTRIC THEOREM \u2014 KRM USA",
+   "url": "https://posh.vip/e/electric-theorem-krm-usa",
+   "flyer": "https://images.posh.vip/originals/6abd74064bd6b99612e30596"
+  },
+  {
+   "date": "2026-10-10",
+   "time": "8:00 PM",
+   "title": "Menace Mary w/ Miss Conduct",
+   "url": "https://posh.vip/e/menace-mary-w-miss-conduct",
+   "flyer": "https://images.posh.vip/originals/6abe938444ec9745170ebf6d"
+  },
+  {
+   "date": "2026-10-14",
+   "time": "9:30 PM",
+   "title": "ELECTRIC THEOREM \u2014 KRM USA",
+   "url": "https://posh.vip/e/electric-theorem-krm-usa-1",
+   "flyer": "https://images.posh.vip/originals/6abd6cfdea492813f684116d"
   },
   {
    "date": "2026-10-16",
@@ -297,18 +325,60 @@
    "flyer": "https://images.posh.vip/originals/6a9df37c8c7f2235858572d0"
   },
   {
+   "date": "2026-10-17",
+   "time": "8:00 PM",
+   "title": "Canceled.. Night of Latin Reggae (Reggae en Espa\u00f1ol)",
+   "url": "https://posh.vip/e/a-night-of-latin-reggae-reggae-en-espaol",
+   "flyer": "https://images.posh.vip/originals/6abbcdeca1793c406467a9f9"
+  },
+  {
+   "date": "2026-10-21",
+   "time": "9:30 PM",
+   "title": "ELECTRIC THEOREM \u2014 KRM USA",
+   "url": "https://posh.vip/e/electric-theorem-krm-usa-2",
+   "flyer": "https://images.posh.vip/originals/6abd7552b4a594dc15f5b0e1"
+  },
+  {
+   "date": "2026-10-23",
+   "time": "7:00 PM",
+   "title": "AZ LIVE Concert",
+   "url": "https://posh.vip/e/az-live-concert",
+   "flyer": "https://images.posh.vip/originals/6ab6a1e175b682a7dd22332d"
+  },
+  {
+   "date": "2026-10-24",
+   "time": "7:00 PM",
+   "title": "TheMadFanatic Performing Live \u2014 A Concert for Broncos Fans",
+   "url": "https://posh.vip/e/themadfanatic-performing-live-a-concert-for-broncos-fans",
+   "flyer": "https://images.posh.vip/originals/6ad444524dee118fb9470adc"
+  },
+  {
    "date": "2026-10-24",
    "time": "8:00 PM",
-   "title": "(NEW DATE) RED WHITE AND NU",
+   "title": "Canceled RED WHITE AND NU",
    "url": "https://posh.vip/e/elote-korn-tribute-w-be-quiet-and-drive-deftones-tribute",
    "flyer": "https://images.posh.vip/originals/6a0600313eb2debbd25523db"
   },
   {
    "date": "2026-10-25",
    "time": "6:00 PM",
-   "title": "SMILE EMPTY SOUL",
+   "title": "SMILE EMPTY SOUL w/ REVunion",
    "url": "https://posh.vip/e/smile-empty-soul",
    "flyer": "https://images.posh.vip/originals/6a95d418fcb3ebaceb7a596e"
+  },
+  {
+   "date": "2026-10-28",
+   "time": "9:30 PM",
+   "title": "ELECTRIC THEOREM \u2014 KRM USA",
+   "url": "https://posh.vip/e/electric-theorem-krm-usa-3",
+   "flyer": "https://images.posh.vip/originals/6abd76a7fd8b7da4b89cfae4"
+  },
+  {
+   "date": "2026-10-30",
+   "time": "8:00 PM",
+   "title": "Drop DIEZEL",
+   "url": "https://posh.vip/e/drop-diezel",
+   "flyer": "https://images.posh.vip/originals/6adb89db03fb801a880625c7"
   },
   {
    "date": "2026-10-31",
@@ -318,18 +388,172 @@
    "flyer": "https://images.posh.vip/originals/6a97b811aef48643e8142f2c"
   },
   {
-   "date": "2026-11-13",
+   "date": "2026-11-04",
+   "time": "9:30 PM",
+   "title": "ELECTRIC THEOREM \u2014 KRM USA",
+   "url": "https://posh.vip/e/electric-theorem-krm-usa-4",
+   "flyer": "https://images.posh.vip/originals/6abd77fe26f3c0b44a516e02"
+  },
+  {
+   "date": "2026-11-06",
    "time": "8:00 PM",
-   "title": "Green Jello w/ Show Me God, Junk Drawer & N2",
+   "title": "Human Like You (Release Signing) with Wastelands, Fire Within, Circus of Mayhem, DJ Metal Mike & Angela Falling",
+   "url": "https://posh.vip/e/human-like-you-release-signing-with-wastelands-fire-within-circus-of-mayhem-dj-metal-mike-angela-falling",
+   "flyer": "https://images.posh.vip/originals/6ab95f7101090b7a1fe36db3"
+  },
+  {
+   "date": "2026-11-07",
+   "time": "8:00 PM",
+   "title": "The SoapGirls",
+   "url": "https://posh.vip/e/the-soapgirls",
+   "flyer": "https://images.posh.vip/originals/6ad511514edd7561a1598d94"
+  },
+  {
+   "date": "2026-11-11",
+   "time": "9:30 PM",
+   "title": "ELECTRIC THEOREM \u2014 KRM USA",
+   "url": "https://posh.vip/e/electric-theorem-krm-usa-5",
+   "flyer": "https://images.posh.vip/originals/6abd796539109551e761c105"
+  },
+  {
+   "date": "2026-11-12",
+   "time": "6:00 PM",
+   "title": "Killer Dwarfs w/Lit Up",
+   "url": "https://posh.vip/e/killer-dwarfs-wlit-up",
+   "flyer": "https://images.posh.vip/originals/6a323ffe91770607e199d026"
+  },
+  {
+   "date": "2026-11-12",
+   "time": "6:00 PM",
+   "title": "Killer Dwarfs w/Lit Up",
+   "url": "https://posh.vip/e/killer-dwarfs-wlit-up-1",
+   "flyer": "https://images.posh.vip/originals/6a323ffe91770607e199d026"
+  },
+  {
+   "date": "2026-11-12",
+   "time": "6:00 PM",
+   "title": "Killer Dwarfs w/Lit Up",
+   "url": "https://posh.vip/e/killer-dwarfs-wlit-up-2",
+   "flyer": "https://images.posh.vip/originals/6ae8d39dc276d6f94edd0c29"
+  },
+  {
+   "date": "2026-11-14",
+   "time": "8:00 PM",
+   "title": "The Linkin Park Experience w/ Menace Mary",
+   "url": "https://posh.vip/e/the-linkin-park-experience-w-menace-mary",
+   "flyer": "https://images.posh.vip/originals/6aecede97ed1301e16680dcf"
+  },
+  {
+   "date": "2026-11-18",
+   "time": "9:30 PM",
+   "title": "ELECTRIC THEOREM \u2014 KRM USA",
+   "url": "https://posh.vip/e/electric-theorem-krm-usa-6",
+   "flyer": "https://images.posh.vip/originals/6abd7abfdbc3d07bfbb5d3b7"
+  },
+  {
+   "date": "2026-11-20",
+   "time": "8:00 PM",
+   "title": "Green Jell\u00ff w/ N2, Engines of Aggression, Junk Drawer & Poca Madre",
    "url": "https://posh.vip/e/green-jello",
-   "flyer": "https://images.posh.vip/originals/6a310092e3f3a45b6b5c6491"
+   "flyer": "https://images.posh.vip/originals/6ae94ba1b7969ab724782a7a"
   },
   {
    "date": "2026-11-24",
    "time": "6:00 PM",
-   "title": "A Killer's Confession w/Dizasterpiece, Dead Things",
+   "title": "A Killer's Confession w/Dizasterpiece, Dead Things w/ Apex Nemesis & Avarist",
    "url": "https://posh.vip/e/a-killers-confession-wdizasterpiece-dead-things",
-   "flyer": "https://images.posh.vip/originals/6a309059f9fa362c9d3b770e"
+   "flyer": "https://images.posh.vip/originals/6afcfc0fee1c428e5e0121a1"
+  },
+  {
+   "date": "2026-11-25",
+   "time": "9:30 PM",
+   "title": "ELECTRIC THEOREM \u2014 KRM USA",
+   "url": "https://posh.vip/e/electric-theorem-krm-usa-7",
+   "flyer": "https://images.posh.vip/originals/6abd7c113702fe3c7ae02c81"
+  },
+  {
+   "date": "2026-11-27",
+   "time": "7:00 PM",
+   "title": "Dwarves w/ One Beer Left, St. PoP & None!",
+   "url": "https://posh.vip/e/dwarves",
+   "flyer": "https://images.posh.vip/originals/6ab544cff82bb7fd8685afdb"
+  },
+  {
+   "date": "2026-12-04",
+   "time": "7:30 PM",
+   "title": "Wild At Heart a HEART TRIBUTE w Reckless Summer And Ghost Of 88",
+   "url": "https://posh.vip/e/wild-at-heart-a-heart-tribute-w-reckless-summer-and-ghost-of-88",
+   "flyer": "https://images.posh.vip/originals/6ad6973d4f63eb7ebde35a79"
+  },
+  {
+   "date": "2026-12-05",
+   "time": "8:00 PM",
+   "title": "Drop DIEZEL",
+   "url": "https://posh.vip/e/drop-diezel-1",
+   "flyer": "https://images.posh.vip/originals/6adb8a4703fb801a8806833f"
+  },
+  {
+   "date": "2026-12-11",
+   "time": "8:00 PM",
+   "title": "Christmas From The Heart",
+   "url": "https://posh.vip/e/christmas-from-the-heart",
+   "flyer": "https://images.posh.vip/originals/6af87cabbdd0f6c998a4909a"
+  },
+  {
+   "date": "2026-12-12",
+   "time": "7:00 PM",
+   "title": "L.A.'s Wasted Youth",
+   "url": "https://posh.vip/e/las-wasted-youth",
+   "flyer": "https://images.posh.vip/originals/6ab551c57d6fe4a9e6d366ee"
+  },
+  {
+   "date": "2026-12-18",
+   "time": "7:00 PM",
+   "title": "Green Buds & Jam 12 featuring Property Six",
+   "url": "https://posh.vip/e/green-buds-jam-12-featuring-property-six",
+   "flyer": "https://images.posh.vip/originals/6af878833c4c26e594850473"
+  },
+  {
+   "date": "2026-12-19",
+   "time": "8:30 PM",
+   "title": "Stryder and Friends",
+   "url": "https://posh.vip/e/stryder-and-friends",
+   "flyer": "https://images.posh.vip/originals/6af88ff06cbf5147c433316f"
+  },
+  {
+   "date": "2026-12-26",
+   "time": "7:45 PM",
+   "title": "Ho, HO, HEY After Christmas Party at The 44Live!",
+   "url": "https://posh.vip/e/ho-ho-hey-after-christmas-party-at-the-44",
+   "flyer": "https://images.posh.vip/originals/6b04b8768772336fa1fe58f9"
+  },
+  {
+   "date": "2027-01-08",
+   "time": "7:00 PM",
+   "title": "Atomic Kings \u2014 Album Release Party",
+   "url": "https://posh.vip/e/atomic-kings-album-release-party",
+   "flyer": "https://images.posh.vip/originals/6ad28200dadf809288e22c50"
+  },
+  {
+   "date": "2027-01-29",
+   "time": "8:00 PM",
+   "title": "Scotty Austin",
+   "url": "https://posh.vip/e/scotty-austin",
+   "flyer": "https://images.posh.vip/originals/6b01d4d0bf2768ff308a4e63"
+  },
+  {
+   "date": "2027-03-06",
+   "time": "7:00 PM",
+   "title": "Ghost Stories / Engine\u2019s Drone at The 44 Live",
+   "url": "https://posh.vip/e/ghost-stories-engines-drone-at-the-44-live",
+   "flyer": "https://images.posh.vip/originals/6b073b5231aa2cce2efc8aa7"
+  },
+  {
+   "date": "2027-03-08",
+   "time": "7:00 PM",
+   "title": "CALL IT OFF",
+   "url": "https://posh.vip/e/call-it-off",
+   "flyer": "https://images.posh.vip/originals/6b00f1e2f7b9823a39a11c98"
   }
  ]
 }

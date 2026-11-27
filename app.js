@@ -15,9 +15,9 @@ const CONFIG = {
   phoneRaw: "+16238421053",
   address: "4494 W Peoria Ave, Glendale, AZ 85302",
   // --- EVENT BOOKING (REAL) ---
-  bookingContact: "Benjamin Millo",       // handles all event booking
+  bookingContact: "The 44 Live Booking Team", // handles all event booking
   emails: {
-    // Every event type routes to Benjamin Millo at Booking@the44.live.
+    // Every event type routes to the booking team at Booking@the44.live.
     // Routing still works because the event type is written into the subject
     // line. Restore per-type addresses only if separate inboxes are confirmed.
     corporate: "Booking@the44.live",
@@ -103,7 +103,7 @@ const EVENT_TYPES = [
    desc:"Birthdays, bachelor & bachelorette bashes, reunions and celebrations. Your crowd, our stage.",
    icon:'<path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z"/>'},
   {key:"talent", title:"Live Music & Artist Booking",
-   desc:"Play our stage. Booked by Benjamin Millo, Talent Buyer & Entertainment Director. Local acts seeking support slots: email a full EPK, artist name and music links (YouTube/Spotify).",
+   desc:"Play our stage. Booked by Adam Messler on The 44 Live booking team. Local acts seeking support slots: email a full EPK, artist name and music links (YouTube/Spotify).",
    icon:'<path d="M12 3v10.55A4 4 0 1014 17V7h4V3z"/>'},
   {key:"specialty", title:"Specialty Events",
    desc:"Themed nights, fundraisers & nonprofits, viewing parties, weddings, receptions and anything custom.",
